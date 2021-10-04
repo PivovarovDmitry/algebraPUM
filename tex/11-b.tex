@@ -1,0 +1,274 @@
+%        File: 11.tex
+%     Created: ср апр 15 10:00  2020 M
+% Last Change: ср апр 15 10:00  2020 M
+%
+\documentclass[algebra,twocolumn]{pum}
+\listnumber{11}
+\date{16.04.20}
+\classname{8-Д}
+\lesson{11:30-13:20 }
+\begin{document}
+\subsubsection*{Кубические неравенства}
+Кубическое неравенство -- неравенство, в обеих частях которого стоят многочлены 3-ей степени. Простейшим примером кубического неравенства может быть неравенство вида: $$ax^3+bx^2+cx+d>0.$$
+
+Существует утверждение, что любой многочлен 3-ей степени можно представить в виде: $$a(x-\alpha)(x-\beta)(x-\gamma).$$
+
+Воспользуемся этим и составим таблицу возможных знаков каждого из слагаемых и их произведения:
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c|c|c||c}
+    $x-\alpha$ & $x-\beta$ & $x-\gamma$ & произведение \\
+    \hline
+    $+$ & $+$ & $+$ & $+$ \\
+    $+$ & $+$ & $-$ & $-$ \\
+    $+$ & $-$ & $+$ & $-$ \\
+    $+$ & $-$ & $-$ & $+$ \\
+    $-$ & $+$ & $+$ & $-$ \\
+    $-$ & $+$ & $-$ & $+$ \\
+    $-$ & $-$ & $+$ & $+$ \\
+    $-$ & $-$ & $-$ & $-$ \\
+  \end{tabular}
+\end{table}
+
+Мы видим, что если нужно найти значения $x$, при которых неравенство положительно или отрицательно, то мы должно рассмотреть 4 варианта произведения. Вспоминая аналитический метод решения неравенств мы приходим к тому, что нужно рассмотреть 4 системы из трех неравенств, решить их, и записать ответ в виде объединения. Это потребоует многочисленных записей, в которых можно запутаться, и как следствие сделать ошибку.
+
+Применить графический метод решения также нерационально, поскольку мы не знаем как выглядит график многочлена 3-ей степени, а если его строить по точкам, то границы интервалом можно найти лишь приближенно.
+
+Точное решение можно получить воспользовавшись \emph{методом интервалов}.
+
+\subsubsection*{Метод интервалов}
+Метод интервалов основан на идее чередования интервалов, которые можно было обнаружить в графическом методе решения квадратных неравенств. Сравните два графика:
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    \begin{scope}
+      \coordinate (A) at (-1,1);
+      \coordinate (B) at (1,1);
+      \coordinate (C) at (-2,1);
+      \coordinate (D) at (2,1);
+      \draw[thick,->] (C) -- node[above,yshift=3mm] {$-$} (D);
+      \draw[domain=-1.41:1.41,smooth,ultra thick,darkcolortheme] plot ({\x},{\x*\x});
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \draw[ultra thick,darkcolortheme,fill=white] (B) circle (3pt);
+      \node[below left,yshift=-2mm] at (A) {$x_1$};
+      \node[below right,yshift=-2mm] at (B) {$x_2$};
+      \node[right] at (D) {$x$};
+      \node[above,yshift=3mm] at (C) {$+$};
+      \node[above,yshift=3mm] at (D) {$+$};
+    \end{scope}
+    \begin{scope}[shift={(5,0)}]
+      \coordinate (A) at (-1,1);
+      \coordinate (B) at (1,1);
+      \coordinate (C) at (-2,1);
+      \coordinate (D) at (2,1);
+      \draw[thick,->] (C) -- node[above,yshift=3mm] {$+$} (D);
+      \draw[domain=-1.41:1.41,smooth,ultra thick,darkcolortheme] plot ({\x},{-\x*\x+2});
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \draw[ultra thick,darkcolortheme,fill=white] (B) circle (3pt);
+      \node[below right,yshift=-2mm] at (A) {$x_1$};
+      \node[below left,yshift=-2mm] at (B) {$x_2$};
+      \node[right] at (D) {$x$};
+      \node[above,yshift=3mm] at (C) {$-$};
+      \node[above,yshift=3mm] at (D) {$-$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+
+Здесь намеренно не нарисована ось ординат, потому что не играет роли, где именно относительно начала координат расположены графики. Видно, что если мы расставим на числовой прямой точки пересечения графика функции с осью абсцисс, то в этих точках происходит смена знака функции (произведения).
+
+Аналогичная картина наблюдается и с прямой линией, которая может пересекать ось абсцисс только в одной точке (см. следующую страницу).
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    \begin{scope}
+      \coordinate (A) at (-1,0);
+      \coordinate (B) at (1,0);
+      \coordinate (C) at (-2,0);
+      \coordinate (D) at (2,0);
+      \draw[thick,->] (C) -- (D) node[right] {$x$};
+      \draw[domain=-1:1,smooth,ultra thick,darkcolortheme] plot ({\x},{\x});
+      \draw[ultra thick,darkcolortheme,fill=white] (0,0) circle (3pt);
+      \node[above,yshift=3mm] at (A) {$-$};
+      \node[above,yshift=3mm] at (B) {$+$};
+      \node[below,yshift=-2mm] at (0,0) {$x_1$};
+    \end{scope}
+    \begin{scope}[shift={(5,0)}]
+      \coordinate (A) at (-1,0);
+      \coordinate (B) at (1,0);
+      \coordinate (C) at (-2,0);
+      \coordinate (D) at (2,0);
+      \draw[thick,->] (C) -- (D) node[right] {$x$};
+      \draw[domain=-1:1,smooth,ultra thick,darkcolortheme] plot ({\x},{-1*\x});
+      \draw[ultra thick,darkcolortheme,fill=white] (0,0) circle (3pt);
+      \node[above,yshift=3mm] at (A) {$-$};
+      \node[above,yshift=3mm] at (B) {$+$};
+      \node[below,yshift=-2mm] at (0,0) {$x_1$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+
+Поняв, что знаки чередуются, остается решить, с какого знака начинать. Обе левые картинки можно получить из правых отрожением относительно оси абсцисс, т.е. домножением функции на $-1$. Заметим, что старший коэффициент функций, которые изображены на правых рисунках отрицательный. Это и является условием для требуемого домножения.
+
+\begin{pumbox}{Алгоритм}
+  \begin{enumerate}[label=\arabic*.]
+    \item Преобразовать левую часть кубического неравенства к виду $a(x-\alpha)(x-\beta)(x-\gamma)$.
+    \item Разделить неравенство на $a$.
+    \item Расставить числа $\alpha$, $\beta$ и $\gamma$ по возрастанию на числовой прямой, обозначив их кружками.
+    \item Заштрифовать круги, если неравенство нестрогое.
+    \item Расставить между отмеченными точками чередующиеся знаки справа налево, начиная с плюса.
+    \item Записать объединение интервалов одного знака, который определяем из неравенства.
+  \end{enumerate}
+\end{pumbox}
+
+\begin{exercises}
+  \begin{question}
+    Выполнить первый и второй шаг алгоритма для следующих неравенства и найти числа $\alpha$, $\beta$ и $\gamma$:
+    \begin{enumerate}
+      \item $-(x-2)(x+3)(x-5)>0$;
+      \item $(1-x)(x+3)(8-x)>0$;
+      \item $(x+13)(7-x)(8-x)<0$;
+      \item $(x-2)(4-x)(x-5)<0$;
+      \item $(10-x)(15-x)(16-x)\ge0$;
+      \item $-(15-x)(5-x)(7-x)\ge0$;
+      \item $(10-5x)(15-3x)(16-x)\le0$;
+      \item $-(16-8x)(5-x)(7-x)\le0$;
+    \end{enumerate}
+  \end{question}
+  Решить неравенства методом интервалов:
+  \begin{question}
+    \vspace{-13pt}
+      \begin{enumerate}
+        \item $(x-1)(x-3)(x-5)>0$;
+        \item $(x+1)(x-1)(x-2)\ge0$;
+        \item $(x-1)(x-2)(x+5)<0$;
+        \item $(x+2)(x+1)(x-3)\le0$;
+      \end{enumerate}
+  \end{question}
+  \begin{question}
+    \vspace{-13pt}
+      \begin{enumerate}
+        \item $(2-x)(x+3)(x-7)<0$;
+        \item $(5-x)(x-3)(x+12)>0$;
+        \item $(3x-4)(1-x)(2x+1)<0$;
+        \item $(2x-5)(7x+3)(x+8)<0$.
+      \end{enumerate}
+  \end{question}
+  \begin{question}
+    \vspace{-13pt}
+      \begin{enumerate}
+        \item $(x-3)(x^2-3x+2)\ge0$;
+        \item $(2-x)(x^2-x-12)\le0$.
+      \end{enumerate}
+  \end{question}
+  \begin{question}
+    \vspace{-13pt}
+    \begin{enumerate}
+        \item $(2-4x)(x^2-x-2)<0$;
+        \item $(-4-3x)(x^2+3x-4)>0$;
+        \item $(3x-7)(x^2+2x+2)<0$;
+        \item $(5x-8)(x^2-4x+5)>0$.
+      \end{enumerate}
+  \end{question}
+\end{exercises}
+
+\subsubsection*{Обобщенный метод интервалов}
+Знак \textcolor{red}{не будет} чередоваться, если парабола пересекает ось абсцисс в одной точке.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    \begin{scope}
+      \coordinate (A) at (0,0);
+      \coordinate (C) at (-2,0);
+      \coordinate (D) at (2,0);
+      \draw[thick,->] (C) node[above right,yshift=3mm] {$+$} -- (D) node[above left,yshift=3mm] {$+$} node[right] {$x$};
+      \draw[domain=-1:1,smooth,ultra thick,darkcolortheme] plot ({\x},{\x*\x});
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \node[below,yshift=-2mm] at (A) {$x_1$};
+    \end{scope}
+    \begin{scope}[shift={(5,0)}]
+      \coordinate (A) at (0,0);
+      \coordinate (C) at (-2,0);
+      \coordinate (D) at (2,0);
+      \draw[thick,->] (C) node[above right,yshift=3mm] {$-$} -- (D) node[above left,yshift=3mm] {$-$} node[right] {$x$};
+      \draw[domain=-1:1,smooth,ultra thick,darkcolortheme] plot ({\x},{-\x*\x});
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \node[below,yshift=-2mm] at (A) {$x_1$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+
+Такая ситуация возникает в случае, если дискриминант неравенства равен нулю. В этом случае квадратный трехчлен можно записать в виде полного квадрата 
+$$ax^2+cx+b=a(x-x_1)^2.$$
+Это замечание обобщает метод интервалов на случай решения неравенств
+$$(x-\alpha)^2(x-\beta)>0,\quad (x-\alpha)^3>0.$$
+\begin{pumbox}{Измененные шаги в обобщенном методе}
+  \begin{enumerate}
+    \item[1*.] Преобразовать левую часть кубического неравенства к одному из следующих видов:
+      \begin{gather*}
+        a(x-\alpha)(x-\beta)(x-\gamma), \\
+        a(x-\alpha)^2 (x-\beta), \\
+        a(x-\alpha)^3.
+      \end{gather*}
+    \item[4*.] Расставить знаки справа налево, начиная с плюса, изменяя знак при прохождении точек $\beta$ и $\gamma$. При прохождении точки $\alpha$ изменяем знак, если $x-\alpha$ в нечетное степени, и оставляем его, если $x-\alpha$ в четной степени.
+  \end{enumerate}
+\end{pumbox}
+
+\begin{exercises}
+  Решить неравенства обобщенным методом интервалов:
+  \begin{question}
+    \vspace{-13pt}
+    \begin{enumerate}
+      \item $(x-2)^2(x-1)>0$;
+      \item $(x+4)(x+3)^2<0$;
+      \item $(x+2)(3-5x)^2<0$;
+      \item $(3x-1)(x+1)^2>0$.
+    \end{enumerate}
+  \end{question}
+  \begin{question}
+    \vspace{-13pt}
+    \begin{enumerate}
+      \item $(8x-9)^3\ge0$;
+      \item $(30-10x)^3\ge0$;
+      \item $(0,2x-0,4)^3\le0$;
+      \item $(1,5-4,5x)^3\le0$;
+      \item $(\sqrt{2}x-\sqrt{8})^3>0$;
+      \item $(2\frac{3}{4}-7\frac{5}{8}x)^3>0$;
+      \item $(\sqrt{10}x-\sqrt{100})^3<0$;
+      \item $(-\frac{1}{4}-\frac{15}{16}x)^3<0$.
+    \end{enumerate}
+  \end{question}
+  \begin{question}
+    \vspace{-13pt}
+    \begin{enumerate}
+      \item $(x+1)(x^2-x+x)>0$;
+      \item $(3-x)(x^2+2x+1)^2<0$;
+      \item $(4x^2+4x+4)(8-4x)^2<0$;
+      \item $(3x^2+2x-1)(x+1)>0$.
+    \end{enumerate}
+  \end{question}
+\end{exercises}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    \begin{scope}
+      \coordinate (L) at (-2,0);
+      \coordinate (R) at (2,0);
+      \draw[thick,->] (L) -- (R) node[right] {$x$};
+      \coordinate (A) at (-1,0);
+      \coordinate (B) at (0,0);
+      \coordinate (C) at (1,0);
+      \node[below,yshift=-2mm] at (A) {$x_1$};
+      \node[below,yshift=-2mm] at (B) {$x_2$};
+      \node[below,yshift=-2mm] at (C) {$x_3$};
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \draw[ultra thick,darkcolortheme,fill=white] (B) circle (3pt);
+      \draw[ultra thick,darkcolortheme,fill=white] (C) circle (3pt);
+      \path (L) -- node[above] {$-$} (A);
+      \path (A) -- node[above] {$+$} (B);
+      \path (B) -- node[above] {$-$} (C);
+      \path (C) -- node[above] {$+$} (R);
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+\end{document}

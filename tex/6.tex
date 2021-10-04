@@ -1,0 +1,187 @@
+%        File: practicum2.tex
+%     Created: пн мар 30 10:00  2020 M
+% Last Change: пн мар 30 10:00  2020 M
+%
+\documentclass[algebra,twocolumn]{pum}
+\listnumber{6}
+\date{07.04.20}
+\classname{8-Д}
+\lesson{практикум }
+\usetikzlibrary{patterns,arrows}
+\usepackage{icomma}
+%\usepackage{ziffer}
+\newcommand\red[1]{\textcolor{red}{#1}}
+
+\newcommand\segment[2]{%
+\begin{tikzpicture}
+%  \draw[help lines] (-5,-1) grid (5,1);
+  \draw[->] (-5,0) -- (5,0); 
+  \draw[pattern=north east lines] (#1,0) rectangle (#2,0.1);
+  \draw[*-*,shorten <=-0.1cm, shorten >=-0.1cm] (#1,0) -- (#2,0);
+  \node[above,yshift=0.2cm] at (#1,0) {#1};
+  \node[above,yshift=0.2cm] at (#2,0) {#2};
+\end{tikzpicture}
+}
+\newcommand\interval[2]{%
+\begin{tikzpicture}
+%  \draw[help lines] (-5,-1) grid (5,1);
+  \draw[->] (-5,0) -- (5,0); 
+  \draw[pattern=north east lines] (#1,0) rectangle (#2,0.1);
+  \draw[o-o,shorten <=-0.1cm, shorten >=-0.1cm] (#1,0) -- (#2,0);
+  \node[above,yshift=0.2cm] at (#1,0) {#1};
+  \node[above,yshift=0.2cm] at (#2,0) {#2};
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\subsubsection*{Числовые неравенства}
+Никакие физические величины не могут быть определены абсолютно точно. Важно знать, в каком диапазоне лежит это число. Данная операция называется оцениванием, ее результатом будет неравенство, в котором присутствуют буквы, обозначающие физические величины и числа, характеризующие диапазон.
+
+Другим примером из современной жизни является вычисления, которые производит компьютер. Всилу внутреннего строения вычисления эти проводятся с ограниченной точностью, поэтому проверка числа на равенство может зачастую привести к неверному результату, так как в точности внутреннее представление компьютера может отличаться от нашего представления. Программисту важно правильно оценивать переменные программы.
+
+%\begin{pumbox}{Сравнение выражений}
+%  Сравнить два действительных числа не составляет труда, если они записаны в форме десятичной дроби. На практике приходится сравнивать сложные выражения. Для этого нужно сначал вычислить их. Однако можно сократить объем вычислений, если воспользоваться свойствами сравниваемых величин.  
+%\end{pumbox}
+
+\begin{pumbox}{Сравнение значений функций}
+  Если требуется сравнить значение функций, то можно следовать простому правилу: если функция убывает, то результат сравнения определяется сравнением аргументов; в противном случае неравенство противоположное. Данное правило справедливо только на участке, где функция {\bf непрерывная} и не меняет характер поведения ({\bf убывает/возрастает}).
+\end{pumbox}
+
+\begin{question}
+  Сравните:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*),nosep]
+      \item $2^2$ и $9^2$
+      \item $(-2)^2$ и $(-3)^2$
+      \item $(-1)^2$ и $(-1,4)^2$
+      \item $1,3^2$ и $(-1,5)^2$
+    \end{enumerate}
+  \end{multicols}
+\end{question}
+\begin{question}
+  Сравните:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*),nosep]
+    \item $\sqrt{2}$ и $\sqrt{3}$
+    \item $\sqrt{3,2}$ и $\sqrt{3,1}$
+    \item $\sqrt{(-2)^2}$ и $-\sqrt{4}$
+    \item $\sqrt{2}$ и $\sqrt{3}$
+  \end{enumerate}
+  \end{multicols}
+\end{question}
+\begin{question}
+  Сравните:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*)]
+    \item $\frac{1}{3}$ и $\frac{1}{2}$
+    \item $\frac{5}{4}$ и $\frac{3}{4}$
+    \item $\frac{2}{3}$ и $\frac{3}{2}$
+    \item $-\frac{1}{-2}$ и $-\frac{1}{3}$
+  \end{enumerate}
+  \end{multicols}
+\end{question}
+
+\begin{pumbox}{Сложение неравенств}
+  Верные одноименные неравенства можно складывать.
+\end{pumbox}
+
+\begin{question}
+  Сложите числовые неравенства:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*),nosep]
+      \item $14>11$ и $10>9$
+      \item $-6<-5$ и $2<3$
+      \item $-2>-3$ и $3>2$
+      \item $4-8\le 0$ и $8\le 9$
+    \end{enumerate}
+  \end{multicols}
+\end{question}
+
+\begin{pumbox}{Умножение неравенств}
+  Верные одноименные неравенства можно перемножать, если сравниваются положительные величины.
+\end{pumbox}
+
+\newpage
+\begin{question}
+  Перемножьте числовые неравенства:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*),nosep]
+      \item $14>10$ и $10>9$
+      \item $6<7$ и $2<3$
+      \item $-2>-3$ и $3>2$
+      \item $4-8\le 0$ и $8\le 9$
+    \end{enumerate}
+  \end{multicols}
+\end{question}
+
+  \begin{question}
+    Докажите, что:
+    \begin{enumerate}[label=\arabic*),nosep]
+      \item если $a>2, b>3$, то $3a+5b>21$;
+      \item если $a>5, b<2$, то $2a-3b>4$;
+      \item если $a>5b, b>2c$, то $a>10c$;
+      \item если $a<2b+3c, b<5m+1, c<4m-2$, то $a<22m-4$.
+    \end{enumerate}
+  \end{question}
+
+
+\begin{pumbox}{Двойные неравенства}
+  Это сокращенная форма записи системы двух неравенств, в каждом из которых присутствует одна и та же часть.
+
+  \begin{equation*}
+    \text{Пример:}\quad a<\red{b}<c\quad\text{или}\quad
+    \begin{cases}
+      a<\red{b},\\ \red{b}<c
+    \end{cases}
+  \end{equation*}
+
+  Красным цветом выделена общая часть неравенств. В качестве знака неравенств могут возникать разноименные неравенства. Таким образом, с двойными неравенствами можно совершать те же действия, что и с обычными неравенствами.
+\end{pumbox}
+
+  \begin{question}
+    Пусть $-4<b<3$. Найдите множество значений выражения $b^2$.
+  \end{question}
+  \begin{question}
+    Пусть $0,5<c<4$. Найдите множество значений выражения $\frac{1}{c}$.
+  \end{question}
+  \begin{question}
+    Пусть $-0,5<c<4$, но $c\ne0$. Найдите множество значений выражения $\frac{1}{c}$.
+  \end{question}
+  \begin{question}
+    Пусть $-3<s<5$. Найдите множество значений выражения $\frac{8}{6-s}$.
+  \end{question}
+
+  \begin{pumbox}{Знакопостоянные величины}
+    Если $a>0$, то $a$ -- положительная величина. \\
+    Если $b<0$, то $b$ -- отрицательная величина.\\ 
+    Если $c\ge0$, то $c$ -- неотрицательная величина.\\
+    Если $d\le0$, то $d$ -- неположительная величина.
+  \end{pumbox}
+
+  \begin{question}
+    % Галицкий 6.21
+    Известо, что $a>2$. Какая величина определяется выражением:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $3a-6$
+        \item $10-5a$
+        \item $2a-2$
+        \item $(a-2)(1-a)$
+        \item $\frac{a-2}{a-1}$
+        \item $(a-3)^2(a-1)$
+        \item $\frac{-5}{2-a}$
+        \item $\frac{(a-1)(2-a)}{5+a}$
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+
+  \begin{question}
+    Найдите наименьшее значение выражения $x+y$, если известно, что $xy=9$, $x>0$.
+  \end{question}
+
+  \begin{question}
+    Два туриста вышли из пункта А в пункт Б. Первый турист половину затраченного времени от начала движения шел со скоростью $v_1$ км/ч, затем -- со скоростью $v_2$ км/ч. Второй же турист первую половину пути шел со скоростью $v_1$ км/ч, а вторую половину -- со скоростью $v_2$ км/ч. Кто из них затратил меньше времени на прохождение пути от А до Б?
+  \end{question}
+
+\end{document}

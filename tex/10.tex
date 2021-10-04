@@ -1,0 +1,265 @@
+\documentclass[algebra,twocolumn]{pum}
+\listnumber{10}
+\date{14.04.20}
+\classname{8-Д}
+\lesson{9:30-11:10 }
+\newenvironment{sqcases}{%
+  \left[
+    \begin{gathered}
+}{%
+    \end{gathered}
+  \right.
+}
+
+\begin{document}
+\subsubsection*{Неравенства с произведением}
+Известно, что положительное произведение двух сомножителей возможно тогда, когда оба сомножителя имеют один и тот же знак, а отрицательно, когда сомножители разного знака. Получается для того, чтобы решить неравенство вида
+\begin{equation*}
+  (x-\alpha)(x-\beta)>0\quad \text{или}\quad (x-\alpha)(x-\beta)<0,
+\end{equation*}
+необходимо заменить его двумя системами неравенств.
+\begin{tcbitemize}[raster columns=2]
+  \label{tcb:systems}
+  \tcbitem[squeezed title={$(x-\alpha)(x-\beta)>0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+      \begin{sqcases}
+        \begin{cases}
+        x-\alpha>0,\\ x-\beta>0;
+        \end{cases} \\
+        \begin{cases}
+        x-\alpha<0,\\ x-\beta<0;
+        \end{cases}
+      \end{sqcases}
+  \end{equation*}
+  \tcbitem[squeezed title={$(x-\alpha)(x-\beta)<0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \begin{sqcases}
+      \begin{cases}
+      x-\alpha>0,\\ x-\beta<0;
+      \end{cases} \\
+      \begin{cases}
+      x-\alpha<0,\\ x-\beta>0;
+      \end{cases}
+    \end{sqcases}
+  \end{equation*}
+\end{tcbitemize}
+Все неравенства могут быть и нестрогими. Квадртаная скобка слева от систем означает, что ответ будет состоять из объединения решений каждой системы. Данный подход применим к произведению любых функций.
+
+\begin{exercises}
+  \begin{question}
+    При каких значениях $x$ положительны произведения:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $(x-3)(x-6)$;
+        \item $(x+4)(x+1)$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    При каких значениях $y$ отрицательны произведения:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $(y-2)(y+6)$;
+        \item $(2y+9)(8-6y)$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    При каких значениях $x$ неположительны произведения:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $-(x+1)(x+2)$;
+        \item $(2x+9)(8-6x)$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    При каких значениях $y$ неотрицательны произведения:
+      \begin{enumerate}
+        \item $\left(\frac{2}{3}y-5\right)\left(y+\frac{1}{10}\right)$;
+        \item $-(0,01y+0,9)\left(8\frac{1}{2}-3,2y\right)$.
+      \end{enumerate}
+  \end{question}
+\end{exercises}
+
+\subsubsection*{Квадратные неравенства}
+Квадртаное неравенство -- это неравенство, в левой и правой частях которого содержится квадратичная функция.
+
+Решением квадратного неравенства называются те значения переменной, при подстановке которых в неравенство, получается верное утверждение.
+
+\begin{exercises}
+  \begin{question}
+      Являются ли решениями неравенства $5x^2-x+3\ge0$ числа:
+      \begin{multicols}{3}
+        \begin{enumerate}
+          \item $0$;
+          \item $-3$;
+          \item $10$;
+          \item $1/2$;
+          \item $0,4$;
+          \item $-1.6$;
+          \item $1$;
+          \item $-1$;
+          \item $-2$.
+        \end{enumerate}
+      \end{multicols}
+  \end{question}
+\end{exercises}
+
+Простейшим примером квадратного неравенства является неравенство вида:
+$$ax^2+bx+c>0.$$
+Знак неравенства может быть любым. Решить подобное неравенство можно одним из двух методов: \emph{аналитическим} или \emph{графическим} методом.
+
+\subsubsection*{Аналитический метод решения}
+
+Представим квадратный трехчлен, входящий в левую часть неравенства в виде произведения
+$$ax^2+bx+c=a(x-\alpha)(x-\beta),$$
+где $\alpha$ и $\beta$ -- корни квадратного трехчлена. Далее необходимо перейти к решению систем неравенств (\href{tcb:systems}{см. рамки}).
+
+\begin{exercises}
+  \begin{question}
+    Решить неравенства методом, сведения к системам:
+    \begin{multicols}{2}
+    \begin{enumerate}
+      \item $x^2>0$;
+      \item $x^2\le0$;
+      \item $x^2+3>0$;
+      \item $x^2-4\ge0$;
+      \item $x^2+x>0$;
+      \item $5x^2-2x\ge0$;
+      \item $9-x^2<0$;
+      \item $-8+4x^2\le0$;
+      \item $x^2+2x-3\le0$;
+      \item $2x^2+8x-10>0$;
+    \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+
+\subsubsection*{Графический метод решения}
+Построим график квадратичной функции. Мы знаем, что в зависимости от знака старшего коэффициента ветви параболы могут быть направлены в разные стороны. А о расположении параболы можно судить по ее вершине. Таким образом можно выделить два принципиальных случая, когда ветви параболы пересекают и не пересекают ось абсцисс. 
+
+\begin{tikzpicture}
+  \begin{axis}[
+      school,
+      xmin=-5, xmax=5,
+      ymin=-5, ymax=5
+    ];
+    \addplot[graphic,ultra thick,red,domain=-10:1] {(x-2)^2-1};
+    \addplot[graphic,ultra thick,red,domain=3:5] {(x-2)^2-1};
+    \addplot[graphic,ultra thick,blue,domain=1:3] {(x-2)^2-1};
+    \addplot[graphic,ultra thick,blue] {-(x+3)^2-2};
+    \node[above right] at (axis cs:1,0) {$A$};
+    \node[above left] at (axis cs:3,0) {$B$};
+    \draw[fill=black] (axis cs:1,0) circle (2pt);
+    \draw[fill=black] (axis cs:3,0) circle (2pt);
+    \node[violet] at (axis cs:2,4) {$y_1=x^2-4x+3$};
+    \node[violet] at (axis cs:-3,-1.5) {$y_2=-x^2-6x-11$};
+  \end{axis}
+\end{tikzpicture}
+
+Парабола $y_1$ пересекает ось абсцисс в точках $A$ и $B$ и может принимать как положительные (в точках красных линий), так и отрицательные (в точках синих линий) значения. А парабола $y_2$ не пересекает ось абсцисс и может принимать только отрицательные значения.
+
+Если бы необходимо было решить неравенство, где квадратный трехчлен больше или больше или равен нулю, то решением для параболы $y_1$ была бы вся числовая прямая кроме открытого или закрытого в зависимости от строгости знака неравенства интервала от точки $A$ до точки $B$. А для параболы $y_2$ решений бы не было.
+
+Если бы необходимо было решить неравенство, где квадратный трехчлен меньше или бменьше или равен нулю, то решением для параболы $y_1$ был бы  открытый или закрытый интервала от точки $A$ до точки $B$. А для параболы $y_2$ -- вся числовая приямая.
+
+Понятие \emph{дискриминанта} вводится и для неравенства. По этой величине мы можем определять число точек пересечения и тем самым быстро сказать, будут ли решения у квадратного неравенства и из какого числа интервалов оно будет состоять.
+
+\newgeometry{left=1.2cm,right=1cm,top=1cm,bottom=1cm}
+\begin{exercises}
+  \begin{question}
+    Решите графически следующие неравенства:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $x^2-3x+2>0$;
+        \item $x^2+5x+6<0$;
+        \item $3x^2-2x-6\le0$;
+        \item $7x^2+2x-5>0$;
+        \item $x^2+4x+3<0$;
+        \item $x^2-5x+4\ge0$;
+        \item $4x^2-x-3<0$;
+        \item $10x^2+3x-1>0$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Решите неравенства, используя график квадратичной функции::
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $x^2-2x+1\ge0$;
+        \item $3x^2-2x+1>0$;
+        \item $x^2+4x+4<0$;
+        \item $-4x^2+x-6\le0$;
+        \item $x^2+6x+9\le0$;
+        \item $5x^2-4x+2<0$;
+        \item $4x^2-4x+1>0$;
+        \item $-7x^2+3x-1\ge0$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Найти область определения функции:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $\sqrt{x^2-8x+7}$;
+        \item $\sqrt{-x^2+3x+4}$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Укажите все значения $p$, при каждом из которых неравенствао верно при любом значении $x$:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $3x^2+2x+p>0$;
+        \item $x^2-6x+p^2=0$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Найдите все значения параметра $p$, при которых имеет действительгные корни уравнение:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $x^2-x+p^2=0$;
+        \item $x^-12px-3p=0$;
+        \item $x^2-4x-2p=0$;
+        \item $x^2+2px+p+2=0$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    При каким значения параметра $p$ неравенство $x^2\le9p^2$ имеет одно целочисленное решение?
+  \end{question}
+  \begin{question}
+    Длина прямоугольника на 2 см больше его ширины. Чему равна длина прямоугольника, если известно, что его площадь не превосходит 224 см$^2$?
+  \end{question}
+  \begin{question}
+    Найти промежутки знакопостоянства следующих функций:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $y=7x-3x^2+40$;
+        \item $y=4x^2-x+14$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Решите неравенство $\frac{23}{x^2-7x-11}\le0$.
+  \end{question}
+  \begin{question}
+    Найдите все значения $a$, при которых существует по крайней мере одно решение неравенства:
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $x^2-ax+4<0$;
+        \item $x^2-ax+3>0$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+
+%  \begin{question}
+%    % 33.58 Мордкович
+%    Школьнику надо купить 5 ручек, 6 карандашей и один маркер. Цена ручки на 2 р. бльше цены карандаша и на 3 р. меньше цены маркера. При какой цене ручки школьнику хватит на покупку 100 р., а сдача составит не более 15 р.?
+%  \end{question}
+\end{document}

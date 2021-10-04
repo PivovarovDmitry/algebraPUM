@@ -1,0 +1,203 @@
+%        File: 12.tex
+%     Created: пн апр 20 04:00  2020 M
+% Last Change: пн апр 20 04:00  2020 M
+%
+\documentclass[algebra,twocolumn]{pum}
+\listnumber{12}
+\date{21.04.20}
+\classname{8-Д}
+\lesson{9:30-11:10 }
+\newenvironment{sqcases}{%
+  \left[
+    \begin{gathered}
+}{%
+    \end{gathered}
+  \right.
+}
+
+\begin{document}
+\subsubsection*{Рациональные неравенства}
+Рациональное неравенство -- неравенство, левая или правая часть которого является рациональным выражением. Рациональное выражение может быть упрощено, что может привести к рассмотренным ранее неравенствам. Перед преобразованиями необходимо исключить те значения переменной, для которых неопределены операции, входящие в выражения (деление на нуль), а также учесть, что умножение может производится на переменные величины, т.е. заранее неизвестного знака.
+
+\begin{exercises}
+  \begin{question}
+    Решить неравенства, преобразуя их к линейному или квадратному:
+    \begin{multicols}{2}
+    \begin{enumerate}
+      \item $\frac{1}{x+1}>1$;
+      \item $\frac{2}{x^2+3x+1}<2$;
+      \item $\frac{x+4}{x-2}\ge2x$;
+      \item $\frac{2x-1}{x^2-4}\le3$;
+    \end{enumerate}
+  \end{multicols}
+  \end{question}
+\end{exercises}
+
+
+%Последнее важно разделить на 2 принципиальных случая: переменный знаменатель с постоянным числителем и переменный знаменатель с переменных числителем. 
+
+%\subsubsection*{Постоянный числитель}
+%Рассмотрим сначала пример аликвотной дроби. Любая дробь, числитель которой является числом, может быть преобразована к аликвотной дроби, воспользовавшись правилом:
+%$$\frac{a}{b}=\frac{1}{b\/a}$$
+%
+%В знаменателе аликваотной дроби может встретиться линейная, квадратичная или кубическая функции, которые, как уже было сказано ранее могут быть представлены в виде произведения. Таким образом, в знаменателе дроби может встретиться конструкция, которую мы уже решали методом интервалов. В этом случае необходимо полностью повторить алгоритм метода интервалов для знаменателя, исключив пункт 3. 
+%
+%Это связано с тем, что для определения знака аликвотной дроби необходимо определить знак знаменателя. При этом результат вычисления такой дроби не может быть равен нулю, поэтому неравенство всегда строгое.
+%
+%\subsubsection*{Переменный числитель}
+%В случае переменного числителя знак неравенства может быть и нестрогим, так как дробь может оказаться равна нулю при нулевом числителе. Знак же дроби определяется и знаком числителя и знаком знаменателя. Поскольку для операции деления действует такой же правило как и для операции умножения, то ничто не мешает применить метод.
+%
+%\begin{pumbox}{ВАЖНО}
+%  Не сокращайте в дроби числитель и знаменатель.
+%\end{pumbox}
+%
+%
+%\begin{pumbox2}{Равносильные неравенства}
+%  $$\frac{a}{x-b}\ge0$$ 
+%  $$\frac{a}{x-b}\le0$$ 
+%  $$\frac{a}{(x-b)(x-c)}\ge0$$ 
+%  $$\frac{a}{(x-b)(x-c)}\le0$$ 
+%\end{pumbox2}
+%
+\subsubsection*{Строгие неравенства}
+Если целую часть неравенства преобразовать в дробную, то рациональная дробь будет сравниваться с нулем. Это означает, что нужно указать при каких значениях переменной $x$ выражение положительно или отрицательно. 
+
+Любое отношение положительно, если делитель и делимое одного знака, и отрицательно, если разного знака. Для решения неравенств с дробями необходимо рассмотреть совокупность двух систем.
+
+\begin{tcbitemize}[raster columns=2,raster every box/.style={center title}]
+  \label{tcb:systems}
+  \tcbitem[squeezed title={$\frac{f(x)}{g(x)}>0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+      \begin{sqcases}
+        \begin{cases}
+          f(x)>0,\\ g(x)>0;
+        \end{cases} \\
+        \begin{cases}
+          f(x)<0,\\ g(x)<0;
+        \end{cases}
+      \end{sqcases}
+  \end{equation*}
+  \tcbitem[squeezed title={$\frac{f(x)}{g(x)}<0$
+}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \begin{sqcases}
+      \begin{cases}
+        f(x)>0,\\ g(x)<0;
+      \end{cases} \\
+      \begin{cases}
+        f(x)<0,\\ g(x)>0;
+      \end{cases}
+    \end{sqcases}
+  \end{equation*}
+\end{tcbitemize}
+
+В рамках на листке №~10 получились точно такие же совокупности. Если решения задач оказываются одинаковыми, то такие задачи называются \emph{равносильными}. И алгоритм решения одной задачи можно применить для получения решения другой задачи. Таким образом, для решения строгих неравенств с дробями можно воспользоваться методом интервалов, в котором неважно, где расположены скобки с двучленами вида $(x-\alpha)$, в числителе или в знаменателе.
+
+\begin{exercises}
+  Решить методом интервалов неравенства:
+\begin{question}
+  \vspace{-24pt}
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $\frac{5}{x}>0$;
+    \item $-\frac{3}{x}<0$;
+    \item $\frac{1}{x-1}<0$;
+    \item $\frac{1}{2x+1}>0$;
+    \end{enumerate}
+  \end{multicols}
+\end{question}
+\begin{question}
+  \vspace{-24pt}
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $\frac{x-1}{x-2}>0$;
+    \item $\frac{x-4}{x-2}<0$;
+    \item $\frac{x+3}{x-5}<0$;
+    \item $\frac{x-7}{x+8}>0$.
+  \end{enumerate}
+\end{multicols}
+\end{question}
+\begin{question}
+  \vspace{-24pt}
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $\frac{x-6}{2-x}>0$;
+    \item $\frac{4-x}{x-9}<0$;
+    \item $\frac{2x+4}{4x+2}<0$;
+    \item $\frac{3x+6}{9x-3}>0$.
+  \end{enumerate}
+\end{multicols}
+\end{question}
+\begin{question}
+  \vspace{-24pt}
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $\frac{2x+3}{x-4}<0$;
+    \item $\frac{7+x}{4x-3}>0$;
+    \item $\frac{12x-6}{5x-4}>0$;
+    \item $\frac{7x-1}{2x+5}<0$.
+  \end{enumerate}
+\end{multicols}
+\end{question}
+\begin{question}
+  \vspace{-24pt}
+  \begin{multicols}{2}
+  \begin{enumerate}
+    \item $\frac{(x-1)(x+2)}{(x-3)}>0$;
+    \item $\frac{(x+1)(x-2)}{x+3}<0$;
+    \item $\frac{(x+1)(7-x)}{(8+x)(x-5)}<0$;
+    \item $\frac{(x-6)(4-x)}{(x-1)(1+x)}>0$.
+  \end{enumerate}
+  \end{multicols}
+\end{question}
+\end{exercises}
+
+
+\subsubsection*{Нестрогие неравенства}
+Для решения нестрогих неравенств необходимо решить систему из одного строгого неравенства и равенства.
+\begin{tcbitemize}[raster columns=3,raster equal height=rows, raster every box/.style={center title}]
+  \tcbitem[squeezed title={$\frac{f(x)}{g(x)}\ge0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \begin{sqcases}
+      \frac{f(x)}{g(x)}>0,\\ \frac{f(x)}{g(x)}=0
+    \end{sqcases} \\
+  \end{equation*}
+  \tcbitem[squeezed title={$\frac{f(x)}{g(x)}\le0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \begin{sqcases}
+      \frac{f(x)}{g(x)}<0,\\ \frac{f(x)}{g(x)}=0
+    \end{sqcases} \\
+  \end{equation*}
+  \tcbitem[squeezed title={$\frac{f(x)}{g(x)}=0$}]
+  \vspace{-0.5cm}
+  \begin{equation*}
+    \begin{cases}
+      f(x)=0,\\ g(x)\ne0
+    \end{cases} \\
+  \end{equation*}
+\end{tcbitemize}
+Третья рамка представлена для повторения алгоритма решения рационального уравнения.
+
+\begin{exercises}
+  Решить неравенства:
+  \begin{question}
+    \vspace{-24pt}
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item $\frac{1}{x-1}\ge0$;
+        \item $\frac{x-8}{2x+3}\ge0$;
+        \item $\frac{(x+2)(x-1)}{x+1}\le0$;
+        \item $\frac{x-3}{x^2-9}\le0$;
+        \item $\frac{5}{2-x}\le0$;
+        \item $\frac{3-4x}{5+x}\le0$;
+        \item $\frac{(x-2)(x+3)}{x-1}\ge0$;
+        \item $\frac{x+1}{x^2-1}\ge0$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+\end{document}

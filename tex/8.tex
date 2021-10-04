@@ -1,0 +1,199 @@
+%        File: 8.tex
+%     Created: чт апр 09 12:00  2020 M
+% Last Change: чт апр 09 12:00  2020 M
+%
+\documentclass[algebra,twocolumn]{pum}
+\listnumber{8}
+\date{09.04.20}
+\classname{8-Д}
+\lesson{11:30-13:20}
+
+\renewcommand\le\leqslant
+\renewcommand\ge\geqslant
+\usepackage{icomma}
+\usepackage{amsmath}
+\begin{document}
+
+\subsubsection*{О числовых промежутках}
+Когда в алгебре имеют дело с переменными величинами, то нужно определить какие значения может принимать эта величина. Неравенство, в одной части которого стоит переменная величина, а в другой -- число, определяет множество значений переменной величины, которое на числовой прямой выглядит как луч.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[name=line2]
+      \coordinate (B) at (1,0);
+      \coordinate (A) at (-1,0);
+      \coordinate (inf1) at (-3,0);
+      \coordinate (inf2) at (3,0);
+      \draw[thick,->] (inf1) -- (inf2);
+      \draw[ultra thick,darkcolortheme,fill=darkcolortheme] (A) -- node[above] {$x>a$} (inf2);
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \node[above,yshift=2mm] at (A) {$a$};
+    \end{scope}
+    \begin{scope}[name=line1,shift={(0,-1)}]
+      \coordinate (A) at (-1,0);
+      \coordinate (B) at (1,0);
+      \coordinate (inf1) at (-3,0);
+      \coordinate (inf2) at (3,0);
+      \draw[thick,->] (inf1) -- (inf2);
+      \draw[ultra thick,darkcolortheme,fill=darkcolortheme] (inf1) -- node[above] {$x\le b$} (B) circle (3pt) ;
+      \node[above,yshift=2mm] at (B) {$b$};
+    \end{scope}
+
+
+  \end{tikzpicture}
+\end{figure}
+
+Если отобразить эти лучи на одной прямой, то в случае их пересечения можно выделить множество общих точек, которое будет отрезком с одной оговоркой. Концы отрезка могут не принадлежать сразу обоим лучам.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{scope}[name=line1]
+      \coordinate (A) at (-1,0);
+      \coordinate (B) at (1,0);
+      \coordinate (inf1) at (-3,0);
+      \coordinate (inf2) at (3,0);
+      \draw[thick,->] (inf1) -- (inf2);
+      \draw[ultra thick,darkcolortheme,fill=darkcolortheme] (A) -- node[above] {$a< x \le b$} (B) circle (3pt) ;
+      \draw[ultra thick,darkcolortheme,fill=white] (A) circle (3pt);
+      \node[below,yshift=-2mm] at (A) {$a$};
+      \node[below,yshift=-2mm] at (B) {$b$};
+    \end{scope}
+  \end{tikzpicture}
+\end{figure}
+
+Данное множество называется \emph{промежутком} и обозначается двумя числами, взятыми в скобочки. В данном случае $(a;b]$. Первое число определяет начало промежутка, второе число -- конец. Точки, обозначающие начало и конец называются границами промежутка. Если граница входит в промежуток, то скобочка квадратная, если не входит, то круглая. Если граница находится сколь угодно далеко, то вместо числа пишут символ $\pm\infty$, где знак выбирают в зависимости от того в какое направление числовой оси промежуток продолжается. Скобки при этом всегда ставятся круглые.
+
+Над числовыми промежутками, как над множествами точек, можно совершать операции объединения и пересечения. Система из промежутков, записанных в форме неравенст определяет пересечение этих промежутков. Так в результате пересечения двух противоположно направленных лучей мы получаем отрезок, который задается двойным неравенством.
+ 
+\begin{pumbox2}{Примеры}
+  \vspace{-0.5cm}
+  \begin{gather*}
+    \begin{aligned}
+      x>a\quad&\Leftrightarrow\quad(a;\infty) \\
+      x\ge a\quad&\Leftrightarrow\quad[a;\infty) \\
+      x<a\quad&\Leftrightarrow\quad(-\infty;a) \\
+      x\le a\quad&\Leftrightarrow\quad(-\infty;a]
+    \end{aligned}
+  \end{gather*}
+  \tcblower
+  \vspace{-0.5cm}
+  \begin{gather*}
+    \begin{aligned}
+    a<x<b\quad&\Leftrightarrow\quad(a;b) \\
+    a\le x < b\quad&\Leftrightarrow\quad[a;b) \\
+    a< x \le b\quad&\Leftrightarrow\quad(a;b] \\
+    a\le x\le b\quad&\Leftrightarrow\quad[a;b]
+    \end{aligned}
+  \end{gather*}
+\end{pumbox2}
+
+%Первое двойное неравенство определяет \emph{открытый} промежуток. Второе и третье -- \emph{полуоткрытый}. Четвертое -- \emph{закрытый}. 
+
+\begin{exercises}
+  \begin{question}
+    Изобразите на числовой прямой точки, удовлетворяющие неравенствам:
+    \begin{multicols}{2}
+      \begin{enumerate}[label=\arabic*),nosep]
+        \item $x>5$;
+        \item $x<9$;
+        \item $x\ge -2$;
+        \item $x\le 0$;
+        \item $-5<x<6$;
+        \item $-8\le x\le 8$;
+        \item $4,2<x\le 4,21$;
+        \item $5\ge x>-3$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \begin{question}
+    Запишите указанные числовой промежуток в виде неравенства:
+    \begin{multicols}{2}
+      \begin{enumerate}[label=\arabic*),nosep]
+
+        \item $(-\infty;9,3)$;
+        \item $(0,3;3,5)$;
+        \item $[5;\infty)$;
+        \item $(-2;-0,3]$.
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+
+\subsubsection*{Линейные неравенства}
+Линейные неравенства -- это неравенства, в левой и правой частях которых стоят линейные функции одного и того же переменного.
+
+Решить линейное неравенсто значит найти все значения переменной величины, при подстановке которых в неравенство получается верное утверждение.
+
+Алгоритм решения неравенства сводится к применению основных свойств числовых неравенств с целью получения промежутка. Чтобы получить промежуток необходимо выполнить ряд преобразований, в ходе которых левая или правая часть неравенства будет содержать только переменную величину. Полученное неравенство можно записать в виде промежутка, которому принадлежит переменная.
+
+\begin{exercises}
+ \begin{question}
+    Решить неравенства, изобразить множество его решений на координатной прямой, ответ записать в виде промежутка. 
+ \vspace{-4mm}
+    \begin{multicols}{2}
+      \begin{enumerate}[label=\arabic*),nosep]
+        \item $x+1>0$;
+        \item $2x\ge8$;
+        \item $11x>-33$;
+        \item $-8x\ge24$;
+        \item $3x+2>0$;
+        \item $-5x-1\le0$;
+        \item $-2(x-3)\le5$;
+        \item $6(x-1)\le11$;
+        \item $2a-11>a+13$;
+        \item $8b+3<9b-2$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+
+\subsubsection*{Системы линейных неравенств}
+Множество линейных неравенств с одной и той же переменной величиной назвается системой линейных неравенст с одной переменной. Решением такой системы называется множество значений переменной, при подстановки которых в каждое неравенство системы получается верное утверждение. Алогоритм решения системы неравенств сводится к отдельному решению каждого неравенства и нахождению пересечения найденных промежутков.
+
+\begin{exercises}
+  \begin{question}
+  Решите системы неравенств:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*),nosep]
+      \item $\begin{cases} x>5,\\x>7 \end{cases}$
+      \item $\begin{cases} x>-3,\\x<1 \end{cases}$
+      \item $\begin{cases} x\le1,\\x<5 \end{cases}$
+      \item $\begin{cases} x\ge3,\\x<-1 \end{cases}$
+      \item $\begin{cases} 7y\le422,\\2y<4 \end{cases}$
+      \item $\begin{cases} 8y<48,\\-3y<12 \end{cases}$
+      \item $\begin{cases} 7-2t\ge0,\\5t-20<0 \end{cases}$
+      \item $\begin{cases} 0,4x-1\le0,\\2,3x\ge4,6 \end{cases}$
+      \item $\begin{cases} \frac{5}{6}z-10\le0,\\ \frac{1}{9}z\ge1\frac{1}{3} \end{cases}$
+      \item $\begin{cases} 5x-7>-14+13x,\\ -4x+5>29+2x \end{cases}$
+    \end{enumerate}
+  \end{multicols}
+  \end{question}
+  \vspace{-4mm}
+  \begin{question}
+    Решите двойное неравенство:
+    \begin{multicols}{2}
+      \begin{enumerate}[label=\arabic*),nosep]
+        \item $3<x+5<6$;
+        \item $-4\le9-x\le5$;
+        \item $-1<-\frac{x}{3}\le2$;
+        \item $-4<3x+2<5$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+  \vspace{-4mm}
+  \begin{question}
+    Решите неравенства:
+    \begin{multicols}{2}
+      \begin{enumerate}[label=\arabic*),nosep]
+        \item $a(a-2)-a^2>5-3a$;
+        \item $5y^2-5y(y+4)\ge100$;
+      \end{enumerate}
+    \end{multicols}
+  \end{question}
+\end{exercises}
+
+\end{document}
+
+
